@@ -10,10 +10,14 @@
 # from .locators import MainPageLocators
 
 from splinter import Browser
+import pytest_splinter
+import splinter
 
 class BasePage():
     def __init__(self, browser):
         self.browser = browser
+        self.selenium_driver = self.browser.driver
+        splinter_selenium_implicit_wait = 10
         # self.url = url
         # self.browser.implicitly_wait(timeout)
 
