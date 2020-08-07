@@ -14,9 +14,11 @@ def browser(request):
     if browser_name == "chrome":
         print("\nstart chrome browser for test..")
         browser = Browser(browser_name)
+
     elif browser_name == "firefox":
         print("\nstart firefox browser for test..")
         browser = Browser(browser_name)
+
     else:
         raise pytest.UsageError("--browser_name parameter should be Chrome or Firefox")
     # browser = Browser()
