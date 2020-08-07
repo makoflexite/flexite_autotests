@@ -28,7 +28,7 @@ def test_ordinary_user_can_login_to_web_with_eng_lang(browser):
     page = WebLoginPage(browser)
     page.input_login_password()
     page.choose_english_lang()
-    time.sleep(2)
+    time.sleep(2) #! think of how to avoid time.sleep() function. Need to add explicit wait somewhere.
     page.press_login_btn()
 
     page1 = FullWebPage(browser)
