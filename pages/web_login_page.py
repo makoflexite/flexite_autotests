@@ -25,4 +25,6 @@ class WebLoginPage(BasePage):
         assert self.browser.find_by_css("[selected]").text == 'Svenska', "Not Swedish language is choosen on language combo box"
 
     def press_login_btn(self):
-        self.browser.find_by_css(WebLoginPageLocators.LOGIN_BTN).click()
+        if self.browser.is_element_visible_by_css(WebLoginPageLocators.LOGIN_BTN, wait_time=5):
+            self.browser.find_by_css(WebLoginPageLocators.LOGIN_BTN).click()
+

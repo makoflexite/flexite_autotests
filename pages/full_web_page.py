@@ -9,7 +9,7 @@ class FullWebPage(BasePage):
         # return FullWebPage(browser=self.browser)
 
     def should_be_web_loaded_with_left_menu(self):
-        assert self.browser.is_element_present_by_css(FullWebPageLocators.LEFT_MENU_COLUMN), "Left menu is not loaded but has to be"
+        assert self.browser.is_element_present_by_css(FullWebPageLocators.LEFT_MENU_COLUMN, wait_time=3), "Left menu is not loaded but has to be"
 
     def should_be_swedish_strings(self):
         tools_label = self.browser.find_by_css(FullWebPageLocators.TOOLS_LABEL).text
@@ -25,19 +25,24 @@ class FullWebPage(BasePage):
 
 
     def should_be_swedish_language_in_settings(self):
-         with self.browser.get_iframe(1) as iframe:
-            # assert iframe.is_element_present_by_css("iframe#mainFrame", wait_time=5), "iframe is not found!"
-            with iframe.get_iframe('mainFrame') as iframe1:
-                # assert iframe1.is_element_present_by_css("select#change-language", wait_time=5), "Combo box is not found!"
-                lang_combo = self.browser.find_by_css(FullWebPageLocators.SETTINGS_LANG_COMBOBOX)
-                lang_combo.click()
-                assert iframe1.find_by_css("[selected]")[1].text == 'Svenska', "Not Swedish language is choosen on language combo box"
+        if self.browser.is_element_present_by_text('Settings', wait_time=5):
+            assert self.browser.is_element_present_by_css("#iframe_content_id_ti0", wait_time=5), "iframe0 is not found!"
+            with self.browser.get_iframe(1) as iframe:
+                # iframe_content_id_ti0
+                # assert iframe.is_element_present_by_css("iframe#mainFrame", wait_time=5), "iframe is not found!"
+                with iframe.get_iframe('mainFrame') as iframe1:
+                    # assert iframe1.is_element_present_by_css("select#change-language", wait_time=5), "Combo box is not found!"
+                    lang_combo = self.browser.find_by_css(FullWebPageLocators.SETTINGS_LANG_COMBOBOX)
+                    lang_combo.click()
+                    assert iframe1.find_by_css("[selected]")[1].text == 'Svenska', "Not Swedish language is choosen on language combo box"
 
     def should_be_english_language_in_settings(self):
-         with self.browser.get_iframe(1) as iframe:
-            # assert iframe.is_element_present_by_css("iframe#mainFrame", wait_time=5), "iframe is not found!"
-            with iframe.get_iframe('mainFrame') as iframe1:
-                # assert iframe1.is_element_present_by_css("select#change-language", wait_time=5), "Combo box is not found!"
-                lang_combo = self.browser.find_by_css(FullWebPageLocators.SETTINGS_LANG_COMBOBOX)
-                lang_combo.click()
-                assert iframe1.find_by_css("[selected]")[1].text == 'English', "Not English language is choosen on language combo box"
+        if self.browser.is_element_present_by_text('Settings', wait_time=5):
+            assert self.browser.is_element_present_by_css("#iframe_content_id_ti0", wait_time=5), "iframe0 is not found!"
+            with self.browser.get_iframe(1) as iframe:
+                # assert iframe.is_element_present_by_css("iframe#mainFrame", wait_time=5), "iframe is not found!"
+                with iframe.get_iframe('mainFrame') as iframe1:
+                    # assert iframe1.is_element_present_by_css("select#change-language", wait_time=5), "Combo box is not found!"
+                    lang_combo = self.browser.find_by_css(FullWebPageLocators.SETTINGS_LANG_COMBOBOX)
+                    lang_combo.click()
+                    assert iframe1.find_by_css("[selected]")[1].text == 'English', "Not English language is choosen on language combo box"
