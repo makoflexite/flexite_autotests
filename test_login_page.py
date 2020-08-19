@@ -3,12 +3,13 @@ import pytest
 import splinter
 import pytest_splinter
 import time
-# import allure
+import allure
 # from allure_commons.types import AttachmentType
 
 from .pages.web_login_page import WebLoginPage
 from .pages.full_web_page import FullWebPage
 
+@allure.feature('Login page tests')
 @pytest.mark.testdebug
 def test_ordinary_user_can_login_to_web_with_swedish_def_lang(browser):
     page = WebLoginPage(browser)
@@ -25,6 +26,7 @@ def test_ordinary_user_can_login_to_web_with_swedish_def_lang(browser):
     page2.should_be_swedish_language_in_settings()
 
 # @pytest.mark.testdebug
+@allure.feature('Login page tests')
 def test_ordinary_user_can_login_to_web_with_eng_lang(browser):
     page = WebLoginPage(browser)
     page.input_login_password()
