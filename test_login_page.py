@@ -11,7 +11,7 @@ from .pages.full_web_page import FullWebPage
 
 @allure.feature('Login page tests')
 @pytest.mark.testdebug
-def test_ordinary_user_can_login_to_web_with_swedish_def_lang(browser):
+def test_ordinary_user_can_login_to_web_with_swedish_def_lang(browser, screenshot_on_failure):
     page = WebLoginPage(browser)
     page.input_login_password()
     page.should_be_swedish_language_on_lang_label()
@@ -27,7 +27,7 @@ def test_ordinary_user_can_login_to_web_with_swedish_def_lang(browser):
 
 # @pytest.mark.testdebug
 @allure.feature('Login page tests')
-def test_ordinary_user_can_login_to_web_with_eng_lang(browser):
+def test_ordinary_user_can_login_to_web_with_eng_lang(browser, screenshot_on_failure):
     page = WebLoginPage(browser)
     page.input_login_password()
     page.choose_english_lang()
