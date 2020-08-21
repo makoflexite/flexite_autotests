@@ -27,9 +27,10 @@ class FullWebPage(BasePage):
         assert tools_label == "Tools", "Not English language is on main page"
 
     @allure.step
-    def should_be_correct_username(self):
+    def should_be_correct_username(self, usname):
         username = self.browser.find_by_css(FullWebPageLocators.LOGGED_IN_USER).text
-        assert username == FullWebPageLocators.ORDINARY_USER_FULL_NAME, "Incorrect user is logged in"
+        assert username == usname, "Incorrect user is logged in"
+#         FullWebPageLocators.ORDINARY_USER_FULL_NAME
 
 
 class SettingsTab(BasePage):
@@ -54,8 +55,8 @@ class SettingsTab(BasePage):
                     lang_combo = iframe1.find_by_css(FullWebPageLocators.SETTINGS_LANG_COMBOBOX)
                     lang_combo.click()
                     assert iframe1.find_by_css("[selected]")[1].text == 'English', "Not English language is choosen on language combo box"
-        else:
-            print('Settings text is not found')
+        # else:
+        #     print('Settings text is not found')
 
     @allure.step
     def should_be_autotests_department_1(self):
@@ -66,5 +67,3 @@ class SettingsTab(BasePage):
                 with iframe.get_iframe('mainFrame') as iframe1:
                     dep_field = iframe1.find_by_css(FullWebPageLocators.SETTINGS_DEPARTMENT_FIELD).value
                     assert dep_field == WebLoginPageLocators.DUPLICATE_USER_DEP_1_LABEL, f"Not '{WebLoginPageLocators.DUPLICATE_USER_DEP_1_LABEL}' is in Department field"
-        else:
-            print('Settings text is not found')

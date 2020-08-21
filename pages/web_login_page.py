@@ -9,12 +9,12 @@ from .locators import WebLoginPageLocators
 class WebLoginPage(BasePage):
     # @allure.step("Inputting login/password on Login page")
     @allure.step
-    def input_login_password_ordinary_user(self):
+    def input_login_password(self, name, passw):
         self.browser.visit(WebLoginPageLocators.LOGIN_PAGE_LINK)
         username = self.browser.find_by_css(WebLoginPageLocators.USERNAME)
-        username.fill(WebLoginPageLocators.ORDINARY_USER_NAME)
+        username.fill(name)
         password = self.browser.find_by_css(WebLoginPageLocators.PASSWORD)
-        password.fill(WebLoginPageLocators.ORDINARY_USER_PASS)
+        password.fill(passw)
 
     @allure.step
     def input_login_password_duplicate_user(self):

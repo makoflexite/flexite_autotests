@@ -30,6 +30,7 @@ class FullWebPageLocators():
     TOOLS_LABEL = "#mt0 > div > div.menu_top_title.menu_top_closed_title.menu-top-title-processes"
     LEFT_MENU_COLUMN = "#menu_column"
     ORDINARY_USER_FULL_NAME = 'User00Surname User00Name'
+    DUPLICATE_USER_FULL_NAME = 'user01Surname user01Name'
 
 
 
