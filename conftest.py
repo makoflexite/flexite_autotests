@@ -44,7 +44,7 @@ def screenshot_on_failure(request, browser):
         attach = browser.screenshot('d:/autotests_materials/autotests_screenshots/scr', full=True)
         if request.node.rep_setup.failed:
             allure.attach(request.function.__name__, attach, allure.attachment_type.PNG)
-    #     elif request.node.rep_setup.passed:
-    #         if request.node.rep_call.failed:
-    #             allure.attach(request.function.__name__, attach, allure.attachment_type.PNG)
+        elif request.node.rep_setup.passed:
+            if request.node.rep_call.failed:
+                allure.attach(request.function.__name__, attach, allure.attachment_type.PNG)
     request.addfinalizer(fin)
