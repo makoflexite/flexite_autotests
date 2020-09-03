@@ -31,7 +31,9 @@ class FullWebPageLocators():
     LEFT_MENU_COLUMN = "#menu_column"
     ORDINARY_USER_FULL_NAME = 'User00Surname User00Name'
     DUPLICATE_USER_FULL_NAME = 'user01Surname user01Name'
-
+    PROCESS_1_ITEM = '#menu_container #topmenu'
+    PROCESS_1_INITIATE = '#menu_container #topmenu .menu_item_title'
+    PROCESS_1_INITIATE_NEXT_BUTTON = '#next-button'
 
 
 # class BasketPageLocators():

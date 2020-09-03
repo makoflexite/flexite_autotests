@@ -45,7 +45,7 @@ def test_ordinary_user_can_login_to_web_with_eng_lang(browser, screenshot_on_fai
     page2 = SettingsTab(browser)
     page2.should_be_english_language_in_settings()
 
-@pytest.mark.testdebug
+# @pytest.mark.testdebug
 @allure.feature('Login page tests')
 def test_duplicate_not_absent_user_can_login_to_web(browser):
     page = WebLoginPage(browser)
