@@ -27,7 +27,7 @@ class FullWebPageLocators():
     SETTINGS_DEPARTMENT_FIELD = "#UnitName"
     SETTINGS_FORM = "MainForm"
     LOGGED_IN_USER = "#menu-wrapper > div.topwrapper > div.login-name"
-    TOOLS_LABEL = "#mt0 > div > div.menu_top_title.menu_top_closed_title.menu-top-title-processes"
+    TOOLS_LABEL = "#mt1 > div > div"
     LEFT_MENU_COLUMN = "#menu_column"
     ORDINARY_USER_FULL_NAME = 'User00Surname User00Name'
     DUPLICATE_USER_FULL_NAME = 'user01Surname user01Name'
