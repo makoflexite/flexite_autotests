@@ -35,7 +35,8 @@ class FullWebPageLocators():
     PROCESS_1_INITIATE = '#menu_container #topmenu .menu_item_title'
     PROCESS_1_INITIATE_NEXT_BUTTON = '#next-button'
 
-
-# class BasketPageLocators():
-#     EMPTY_BASKET_MESSAGE = (By.CSS_SELECTOR, "# content_inner>p>a")
-#     PRODUCTS_IN_BASKET = (By.CSS_SELECTOR, ".basket_summary")
+class Process1InitiatePageLocators():
+    LABEL1 = '#CLR_DIV_16132 > div:nth-child(2) > a'
+    LABEL2 = '#CLR_DIV_16133 > div:nth-child(2) > span'
+    STRING1 = '.ComponentInputField'
+    STRING2 = '.ComponentInputField:nth-child(2)'

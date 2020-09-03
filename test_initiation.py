@@ -4,6 +4,7 @@ import allure
 
 from .pages.web_login_page import WebLoginPage
 from .pages.full_web_page import FullWebPage
+from .pages.web_initiate_page import WebInitiatePage
 from .pages.locators import *
 
 @allure.feature('Initiation tests')
@@ -16,7 +17,8 @@ def test_initiation_ordinary_user_Process_1_from_WEB(browser, screenshot_on_fail
     page.press_login_btn()
     page1 = FullWebPage(browser)
     page1.should_be_web_loaded_with_left_menu()
-    page1.process_1_initiate_click()
-    time.sleep(2)
-    page1.process_1_initiate_finish()
-    time.sleep(5)
+    page2 = WebInitiatePage(browser)
+    page2.process_1_initiate_click()
+    page2.process_1_fill_forms()
+    page2.process_1_initiate_finish()
+    # time.sleep(5)

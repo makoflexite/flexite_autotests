@@ -1,8 +1,9 @@
+import time
+import allure
+
 from .base_page import BasePage
 from .locators import FullWebPageLocators
 from .locators import WebLoginPageLocators
-import time
-import allure
 from allure_commons.types import AttachmentType
 
 class FullWebPage(BasePage):
@@ -83,3 +84,5 @@ class SettingsTab(BasePage):
                 with iframe.get_iframe('mainFrame') as iframe1:
                     dep_field = iframe1.find_by_css(FullWebPageLocators.SETTINGS_DEPARTMENT_FIELD).value
                     assert dep_field == WebLoginPageLocators.DUPLICATE_USER_DEP_1_LABEL, f"Not '{WebLoginPageLocators.DUPLICATE_USER_DEP_1_LABEL}' is in Department field"
+
+
