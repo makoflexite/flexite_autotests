@@ -8,7 +8,7 @@ from .pages.web_initiate_page import WebInitiatePage
 from .pages.locators import *
 
 @allure.feature('Initiation tests')
-@pytest.mark.testdebug
+# @pytest.mark.testdebug
 def test_initiation_ordinary_user_Process_1_from_WEB(browser, screenshot_on_failure):
     page = WebLoginPage(browser)
     page.input_login_password(WebLoginPageLocators.ORDINARY_USER_NAME, WebLoginPageLocators.ORDINARY_USER_PASS)
@@ -19,7 +19,15 @@ def test_initiation_ordinary_user_Process_1_from_WEB(browser, screenshot_on_fail
     page1.should_be_web_loaded_with_left_menu()
     page2 = WebInitiatePage(browser)
     page2.process_1_initiate_click()
+    # drop all created drafts/templates - to add!!!
     page2.process_1_fill_form_1()
-    time.sleep(5)
     page2.process_1_initiate_next_click()
-    time.sleep(5)
+
+    page2.process_1_open_Preview_tab()
+    page2.should_be_correct_data_process_1_Preview()
+    page2.process_1_initiate_Finish_click()
+    page2.process_1_initiate_Alert_Your_registration_saved_closing()
+    page2.process_1_initiate_open_detail_view()
+    page2.should_be_correct_data_process_1_detail_view()
+
+    time.sleep(2)
