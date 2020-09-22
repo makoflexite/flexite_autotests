@@ -12,13 +12,13 @@ idna==2.10
 importlib-metadata==1.6.0
 lxml==4.5.2
 more-itertools==8.2.0
-mysql-connector-python==8.0.21
 namedlist==1.7
 packaging==20.3
 pluggy==0.13.1
 protobuf==3.13.0
 py==1.8.1
 pycparser==2.20
+pyodbc==4.0.30
 pyOpenSSL==19.1.0
 pyparsing==2.4.7
 pytest==5.1.1
