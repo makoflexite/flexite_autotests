@@ -28,9 +28,9 @@ class Sql:
                                    "Database="+database+";"
                                    "UID="+username+";"
                                    "PWD="+userpassword+';')
-        self.query = "-- {}\n\n-- Made in Python".format(datetime.now()
-                                                         .strftime("%d/%m/%Y"))
-        print(self.query)
+        # self.query = "-- {}\n\n-- Made in Python".format(datetime.now()
+        #                                                  .strftime("%d/%m/%Y"))
+        # print(self.query)
 
 
 # try:

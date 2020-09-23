@@ -1,10 +1,9 @@
-import time
 import allure
 
 from .base_page import BasePage
 from .locators import FullWebPageLocators
 from .locators import Process1InitiatePageLocators
-from python_sql_connect import *
+from .python_sql_connect import *
 
 
 class WebInitiatePage(BasePage):
@@ -53,12 +52,19 @@ class WebInitiatePage(BasePage):
             cursor.execute(mySQLQuery)
             sql.cnxn.commit()
             sql.cnxn.close()
-        except:
-            pass
+        except Exception:
+            print ("Can't connect to database")
 
     @allure.step
     def process_1_open_Preview_tab(self):
-        pass
+        with self.browser.get_iframe(1) as iframe:
+            assert iframe.is_element_present_by_css("#mainFrame", wait_time=5), "mainFrame is not found!"
+            with iframe.get_iframe('mainFrame') as iframe1:
+                assert iframe1.is_element_present_by_css("#tabFrame", wait_time=5), "tabFrame is not found!"
+                with iframe1.get_iframe('tabFrame') as iframe2:
+                    preview = iframe2.find_by_css(Process1InitiatePageLocators.PREVIEW_TAB)
+                    preview.mouse_over()
+                    preview.click()
 
     @allure.step
     def should_be_correct_data_process_1_Preview(self):

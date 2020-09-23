@@ -40,3 +40,4 @@ class Process1InitiatePageLocators():
     LABEL2 = '#CLR_DIV_16133 > div:nth-child(2) > span'
     STRING1 = '.ComponentInputField'
     STRING2 = '.ComponentInputField:nth-child(2)'
+    PREVIEW_TAB = '#FormTable #_2'
