@@ -33,11 +33,23 @@ class FullWebPageLocators():
     DUPLICATE_USER_FULL_NAME = 'user01Surname user01Name'
     PROCESS_1_ITEM = '#menu_container #topmenu'
     PROCESS_1_INITIATE = '#menu_container #topmenu .menu_item_title'
-    PROCESS_1_INITIATE_NEXT_BUTTON = '#next-button'
 
 class Process1InitiatePageLocators():
+    PROCESS_1_INITIATE_NEXT_BUTTON = '#next-button'
+    PROCESS_1_INITIATE_FINISH_BUTTON = '#next-button[value="Finish"]'
+    PREVIEW_TAB = '#FormTable #_2'
     LABEL1 = '#CLR_DIV_16132 > div:nth-child(2) > a'
     LABEL2 = '#CLR_DIV_16133 > div:nth-child(2) > span'
-    STRING1 = '.ComponentInputField'
-    STRING2 = '.ComponentInputField:nth-child(2)'
-    PREVIEW_TAB = '#FormTable #_2'
+    STRING1 = '[name="_16134"]'
+    STRING2 = '[name="_16135"]'
+    STRING3 = '[name="_16156"]'
+    MEMO1 = '[name="_16136"]'
+    MEMO2 = '[name="_16155"]'
+    NUMBER1 = '[name="_16158"]'
+    NUMBER2 = '[name="_16159"]'
+    NUMBER3 = '[name="_16161"]'
+    NUMBER4 = '[name="_16162"]'
+    NUMBER5 = '[name="_16166"]'
+    NUMBER6 = '[name="_16167"]'
+
+

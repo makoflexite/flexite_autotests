@@ -4,6 +4,7 @@ from .base_page import BasePage
 from .locators import FullWebPageLocators
 from .locators import Process1InitiatePageLocators
 from .python_sql_connect import *
+from .common_data import *
 
 
 class WebInitiatePage(BasePage):
@@ -18,9 +19,7 @@ class WebInitiatePage(BasePage):
             with self.browser.get_iframe(1) as iframe:
                 assert iframe.is_element_present_by_css("#ButtonsFrame", wait_time=5), "ButtonsFrame is not found!"
                 with iframe.get_iframe('ButtonsFrame') as iframe1:
-                    next_btn = iframe1.find_by_css(FullWebPageLocators.PROCESS_1_INITIATE_NEXT_BUTTON).click()
-                    # if self.browser.is_element_present_by_text('E-mail receivers', wait_time=5):
-                    #     next_btn = iframe1.find_by_css(FullWebPageLocators.PROCESS_1_INITIATE_NEXT_BUTTON).click()
+                    next_btn = iframe1.find_by_css(Process1InitiatePageLocators.PROCESS_1_INITIATE_NEXT_BUTTON).click()
 
     @allure.step
     def process_1_fill_form_1(self):
@@ -36,8 +35,12 @@ class WebInitiatePage(BasePage):
                     """move to checking part"""
                     # string1 = iframe1.find_by_css(Process1InitiatePageLocators.STRING1)
                     # assert string1.value == 'user00', 'macro %%%USER_NAME works incorrectly'
-                    string2 = iframe1.find_by_css(Process1InitiatePageLocators.STRING2)
-                    string2.fill('test value string2')
+                    string2 = iframe1.find_by_css(Process1InitiatePageLocators.STRING2).fill('test value string2')
+                    memo1 = iframe1.find_by_css(Process1InitiatePageLocators.MEMO2).fill('test value memo2')
+                    number2 = iframe1.find_by_css(Process1InitiatePageLocators.NUMBER2).fill('-3')
+                    number3 = iframe1.find_by_css(Process1InitiatePageLocators.NUMBER3).fill('10')
+                    number4 = iframe1.find_by_css(Process1InitiatePageLocators.NUMBER4).fill('1.25')
+
 
     @allure.step
     def process_1_delete_all_drafts_templates(self):
@@ -68,11 +71,26 @@ class WebInitiatePage(BasePage):
 
     @allure.step
     def should_be_correct_data_process_1_Preview(self):
-        pass
+        with self.browser.get_iframe(1) as iframe:
+            assert iframe.is_element_present_by_css("#mainFrame", wait_time=5), "mainFrame is not found!"
+            with iframe.get_iframe('mainFrame') as iframe1:
+                assert iframe1.is_element_present_by_css("#bodyFrame", wait_time=5), "tabFrame is not found!"
+                with iframe1.get_iframe('bodyFrame') as iframe2:
+                    captions = iframe2.find_by_css('#wrapper_table > tbody > tr > td > table.ReviewTable > tbody > tr > td.ReviewComponentCaption')
+                    values = iframe2.find_by_css('#wrapper_table > tbody > tr > td > table.ReviewTable > tbody > tr > td.ReviewComponentValue')
+                    for i in range (2, len(captions)):
+                        caption= captions[i].text
+                        value = values[i-2].text
+                        assert caption in process1_initiation_data, 'Key "{}" is not found in dictionary'.format(caption)
+                        assert process1_initiation_data[caption] == value, 'Value "{}" in Preview table is not same as in dictionary "{}"'.format(value, process1_initiation_data[caption])
+
 
     @allure.step
     def process_1_initiate_Finish_click(self):
-        pass
+            with self.browser.get_iframe(1) as iframe:
+                assert iframe.is_element_present_by_css("#ButtonsFrame", wait_time=5), "ButtonsFrame is not found!"
+                with iframe.get_iframe('ButtonsFrame') as iframe1:
+                    next_btn = iframe1.find_by_css(Process1InitiatePageLocators.PROCESS_1_INITIATE_FINISH_BUTTON).click()
 
     @allure.step
     def process_1_initiate_Alert_Your_registration_saved_closing(self):
