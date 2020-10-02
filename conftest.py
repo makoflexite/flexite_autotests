@@ -1,5 +1,6 @@
 import os
 import pytest
+import selenium
 from selenium import webdriver
 #from selenium.webdriver.chrome.options import Options
 from splinter import Browser
@@ -17,9 +18,12 @@ def browser(request):
     if browser_name == "chrome":
         print("\nstart chrome browser for test..")
         browser = Browser(browser_name)
+        browser.driver.maximize_window()
     elif browser_name == "firefox":
         print("\nstart firefox browser for test..")
         browser = Browser(browser_name)
+        browser.driver.maximize_window()
+            # set_window_size(640, 480)
     # elif browser_name == "iexplorer":
     #     print("\nstart ie browser for test..")
     #     browser = Browser('iexplorer')
