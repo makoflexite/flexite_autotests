@@ -35,6 +35,7 @@ class WebInitiatePage(BasePage):
                     """move to checking part"""
                     # string1 = iframe1.find_by_css(Process1InitiatePageLocators.STRING1)
                     # assert string1.value == 'user00', 'macro %%%USER_NAME works incorrectly'
+
                     string2 = iframe1.find_by_css(Process1InitiatePageLocators.STRING2).fill('test value string2')
                     memo1 = iframe1.find_by_css(Process1InitiatePageLocators.MEMO2).fill('test value memo2')
                     number2 = iframe1.find_by_css(Process1InitiatePageLocators.NUMBER2).fill('-3')
