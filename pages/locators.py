@@ -51,5 +51,11 @@ class Process1InitiatePageLocators():
     NUMBER4 = '[name="_16162"]'
     NUMBER5 = '[name="_16166"]'
     NUMBER6 = '[name="_16167"]'
+    DATE8 = '[name="_16176"]'
+    DATE9_BUTTON = '#A_16177 > img'
+    DATE9_CALENDAR_TODAY = '.fx-drop-calendar-date-today'
+    CHECKBOX3 = '.ComponentInputField.l16180'
+    CHECKBOX4 = '.ComponentInputField.l16181'
+
 
 

@@ -1,4 +1,5 @@
 import allure
+import time
 
 from .base_page import BasePage
 from .locators import FullWebPageLocators
@@ -41,7 +42,11 @@ class WebInitiatePage(BasePage):
                     number2 = iframe1.find_by_css(Process1InitiatePageLocators.NUMBER2).fill('-3')
                     number3 = iframe1.find_by_css(Process1InitiatePageLocators.NUMBER3).fill('10')
                     number4 = iframe1.find_by_css(Process1InitiatePageLocators.NUMBER4).fill('1.25')
-
+                    date8 = iframe1.find_by_css(Process1InitiatePageLocators.DATE8).fill('01/01/2021')
+                    iframe1.find_by_css(Process1InitiatePageLocators.DATE9_BUTTON).click()
+                    iframe1.find_by_css(Process1InitiatePageLocators.DATE9_CALENDAR_TODAY).click()
+                    iframe1.find_by_css(Process1InitiatePageLocators.CHECKBOX3).click()
+                    iframe1.find_by_css(Process1InitiatePageLocators.CHECKBOX4).click()
 
     @allure.step
     def process_1_delete_all_drafts_templates(self):
