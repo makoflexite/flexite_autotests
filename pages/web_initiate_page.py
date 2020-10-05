@@ -1,5 +1,6 @@
 import allure
 import time
+from selenium.webdriver.support.events import EventFiringWebDriver
 
 from .base_page import BasePage
 from .locators import FullWebPageLocators
@@ -47,6 +48,12 @@ class WebInitiatePage(BasePage):
                     iframe1.find_by_css(Process1InitiatePageLocators.DATE9_CALENDAR_TODAY).click()
                     iframe1.find_by_css(Process1InitiatePageLocators.CHECKBOX3).click()
                     iframe1.find_by_css(Process1InitiatePageLocators.CHECKBOX4).click()
+                    combobox1 = iframe1.find_by_css(Process1InitiatePageLocators.COMBOBOX1).click()
+                    iframe1.find_by_css("[value='64137']").click()
+                    combobox3 = iframe1.find_by_css(Process1InitiatePageLocators.COMBOBOX3).click()
+                    iframe1.find_by_css("[value='64159']").click()
+                    # time.sleep(2)
+
 
     @allure.step
     def process_1_delete_all_drafts_templates(self):

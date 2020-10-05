@@ -56,6 +56,11 @@ class Process1InitiatePageLocators():
     DATE9_CALENDAR_TODAY = '.fx-drop-calendar-date-today'
     CHECKBOX3 = '.ComponentInputField.l16180'
     CHECKBOX4 = '.ComponentInputField.l16181'
+    COMBOBOX1 = '[name="_16183"]'
+    COMBOBOX2 = '[name="_16184"]'
+    COMBOBOX3 = '[name="_16185"]'
+    COMBOBOX4 = '[name="_16186"]'
+
 
 
 

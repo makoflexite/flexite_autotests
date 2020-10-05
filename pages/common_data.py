@@ -38,5 +38,10 @@ process1_initiation_data = {
     'Check box1': 'No',
     'Check box2': 'Yes',
     'Check box3': 'Yes',
-    'Check box4': 'No'
+    'Check box4': 'No',
+    'Combo box1': 'One',
+    'Combo box2': 'Two',
+    'Combo box3': 'Three',
+    'Combo box4': 'One'
+
 }
