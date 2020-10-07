@@ -52,6 +52,9 @@ class WebInitiatePage(BasePage):
                     iframe1.find_by_css("[value='64137']").click()
                     combobox3 = iframe1.find_by_css(Process1InitiatePageLocators.COMBOBOX3).click()
                     iframe1.find_by_css("[value='64159']").click()
+                    # radiogroup_combobox5 = iframe1.find_by_css(Process1InitiatePageLocators.RADIOGROUP_COMBOBOX5)
+                    iframe1.find_by_css("#rgv_64186").click()
+                    iframe1.find_by_css("#rgv_64185").click()
                     # time.sleep(2)
 
 

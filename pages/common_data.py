@@ -42,6 +42,7 @@ process1_initiation_data = {
     'Combo box1': 'One',
     'Combo box2': 'Two',
     'Combo box3': 'Three',
-    'Combo box4': 'One'
-
+    'Combo box4': 'One',
+    'Combo box5': 'Four',
+    'Radio group-Combo box5': '4'
 }
