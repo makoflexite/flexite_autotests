@@ -1,0 +1,1 @@
+{"uuid": "e037f364-a118-46ef-9191-684c7ddf40ce", "children": ["ca1b5805-b468-4124-8593-c8d84792c925", "a4cd082f-ee2c-44ce-b857-36999333b560"], "befores": [{"name": "splinter_session_scoped_browser", "status": "passed", "start": 1597829083855, "stop": 1597829083855}], "start": 1597829083855, "stop": 1597829101806}
