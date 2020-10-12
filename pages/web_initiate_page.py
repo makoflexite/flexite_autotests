@@ -55,6 +55,11 @@ class WebInitiatePage(BasePage):
                     # radiogroup_combobox5 = iframe1.find_by_css(Process1InitiatePageLocators.RADIOGROUP_COMBOBOX5)
                     iframe1.find_by_css("#rgv_64186").click()
                     iframe1.find_by_css("#rgv_64185").click()
+                    combobox7 = iframe1.find_by_css(Process1InitiatePageLocators.COMBOBOX7).click()
+                    iframe1.find_by_css(Process1InitiatePageLocators.COMBOBOX7_INPUT).fill('ne')
+                    time.sleep(1)
+                    combobox7_search = len(iframe1.find_by_css(Process1InitiatePageLocators.COMBOBOX7_SEARCH))
+                    assert  combobox7_search == 3, f'Incorrect search result: it should be 3, but it is {combobox7_search}'
                     # time.sleep(2)
 
 
