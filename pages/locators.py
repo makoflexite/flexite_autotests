@@ -67,6 +67,9 @@ class Process1InitiatePageLocators():
     CHECKLISTBOX2_2 = '#cb64213'
     CHECKLISTBOX2_3 = '#cb64214'
     CHECKLISTBOX2_5 = '#cb64216'
+    TIME1 = '[name="_16195"]'
+    TIME1_1 = '#hh16195'
+    TIME1_2 = '#mm16195'
 
 
 

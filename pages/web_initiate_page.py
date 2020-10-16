@@ -1,5 +1,6 @@
 import allure
 import time
+import datetime
 from selenium.webdriver.support.events import EventFiringWebDriver
 
 from .base_page import BasePage
@@ -75,6 +76,18 @@ class WebInitiatePage(BasePage):
                         iframe2.find_by_css(Process1InitiatePageLocators.CHECKLISTBOX2_3).click()
                         iframe2.find_by_css(Process1InitiatePageLocators.CHECKLISTBOX2_5).click()
                     # time.sleep(2)
+                    # print(iframe1.find_by_css(Process1InitiatePageLocators.TIME1_1).value)
+                    # iframe1.find_by_css(Process1InitiatePageLocators.TIME1_2).fill('23')
+            assert self.browser.is_element_present_by_css("#iframe_content_id_ti1",
+                                                          wait_time=5), "iframe0 is not found!"
+            with self.browser.get_iframe(1) as iframe:
+                assert iframe.is_element_present_by_css("#mainFrame", wait_time=5), "#mainFrame is not found!"
+                with iframe.get_iframe('mainFrame') as iframe1:
+                    iframe1.find_by_css(Process1InitiatePageLocators.TIME1_1).fill('16')
+                    iframe1.find_by_css(Process1InitiatePageLocators.TIME1_2).fill('23')
+
+                    current_time = datetime.now().strftime("%H:%M")
+                    print(current_time)
 
 
     @allure.step

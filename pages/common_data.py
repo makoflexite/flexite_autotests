@@ -1,5 +1,6 @@
 import datetime
 
+
 today = datetime.date.today()
 today_date = str(today.strftime('%m/%d/%Y'))
 
@@ -46,5 +47,7 @@ process1_initiation_data = {
     'Combo box5': 'Four',
     'Radio group-Combo box5': '4',
     'Check list box1': 'CHLB - one',
-    'Check list box2': 'CHLB - two\nCHLB - three\nCHLB - five'
+    'Check list box2': 'CHLB - two\nCHLB - three\nCHLB - five',
+    'Time1': '16:23',
+    'Time2': '18:17'
 }
