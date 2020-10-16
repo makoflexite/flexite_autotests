@@ -63,7 +63,10 @@ class Process1InitiatePageLocators():
     COMBOBOX7 = '[name="_16192"]'
     COMBOBOX7_INPUT = '#ddi_16192'
     COMBOBOX7_SEARCH = '#dds_16192>option'
-    # RADIOGROUP_COMBOBOX5 = '#CLR_DIV_16189'
+    CHECKLISTBOX1_1 = '#cb64207'
+    CHECKLISTBOX2_2 = '#cb64213'
+    CHECKLISTBOX2_3 = '#cb64214'
+    CHECKLISTBOX2_5 = '#cb64216'
 
 
 

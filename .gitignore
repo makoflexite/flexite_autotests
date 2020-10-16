@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 mysql_connect.py
+test.py
 /reports/

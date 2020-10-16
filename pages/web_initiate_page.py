@@ -34,7 +34,6 @@ class WebInitiatePage(BasePage):
             with self.browser.get_iframe(1) as iframe:
                 assert iframe.is_element_present_by_css("#mainFrame", wait_time=5), "#mainFrame is not found!"
                 with iframe.get_iframe('mainFrame') as iframe1:
-                    """move to checking part"""
                     # string1 = iframe1.find_by_css(Process1InitiatePageLocators.STRING1)
                     # assert string1.value == 'user00', 'macro %%%USER_NAME works incorrectly'
 
@@ -59,7 +58,22 @@ class WebInitiatePage(BasePage):
                     iframe1.find_by_css(Process1InitiatePageLocators.COMBOBOX7_INPUT).fill('ne')
                     time.sleep(1)
                     combobox7_search = len(iframe1.find_by_css(Process1InitiatePageLocators.COMBOBOX7_SEARCH))
-                    assert  combobox7_search == 3, f'Incorrect search result: it should be 3, but it is {combobox7_search}'
+                    assert combobox7_search == 3, f'Incorrect search result: it should be 3, but it is {combobox7_search}'
+                    iframe1.find_by_css('#MainForm').click()
+                    assert iframe1.is_element_present_by_css("#__16193", wait_time=5), "#__16193 is not found!"
+
+                    with iframe1.get_iframe('frame__16193') as iframe2:
+                        iframe2.find_by_css(Process1InitiatePageLocators.CHECKLISTBOX1_1).click()
+
+            assert self.browser.is_element_present_by_css("#iframe_content_id_ti1", wait_time=5), "iframe0 is not found!"
+            with self.browser.get_iframe(1) as iframe:
+                assert iframe.is_element_present_by_css("#mainFrame", wait_time=5), "#mainFrame is not found!"
+                with iframe.get_iframe('mainFrame') as iframe1:
+                    assert iframe1.is_element_present_by_css("#__16194", wait_time=5), "#__16194 is not found!"
+                    with iframe1.get_iframe('frame__16194') as iframe2:
+                        iframe2.find_by_css(Process1InitiatePageLocators.CHECKLISTBOX2_2).click()
+                        iframe2.find_by_css(Process1InitiatePageLocators.CHECKLISTBOX2_3).click()
+                        iframe2.find_by_css(Process1InitiatePageLocators.CHECKLISTBOX2_5).click()
                     # time.sleep(2)
 
 
