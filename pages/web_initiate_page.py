@@ -8,8 +8,6 @@ from .locators import FullWebPageLocators
 from .locators import Process1InitiatePageLocators
 from .python_sql_connect import *
 from .common_data import *
-from .cross_data import CrossDataVariables
-
 
 class WebInitiatePage(BasePage):
     @allure.step

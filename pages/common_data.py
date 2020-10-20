@@ -1,7 +1,5 @@
 import datetime
 
-from .cross_data import CrossDataVariables
-
 today = datetime.date.today()
 today_date = str(today.strftime('%m/%d/%Y'))
 
