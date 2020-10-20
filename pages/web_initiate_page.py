@@ -8,6 +8,7 @@ from .locators import FullWebPageLocators
 from .locators import Process1InitiatePageLocators
 from .python_sql_connect import *
 from .common_data import *
+from .cross_data import CrossDataVariables
 
 
 class WebInitiatePage(BasePage):
@@ -85,9 +86,9 @@ class WebInitiatePage(BasePage):
                 with iframe.get_iframe('mainFrame') as iframe1:
                     iframe1.find_by_css(Process1InitiatePageLocators.TIME1_1).fill('16')
                     iframe1.find_by_css(Process1InitiatePageLocators.TIME1_2).fill('23')
+                    # CrossDataVariables.CURRENT_TIME = datetime.datetime.now().strftime("%H:%M")
+                    # print(CrossDataVariables.CURRENT_TIME)
 
-                    current_time = datetime.now().strftime("%H:%M")
-                    print(current_time)
 
 
     @allure.step

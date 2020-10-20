@@ -1,5 +1,6 @@
 import datetime
 
+from .cross_data import CrossDataVariables
 
 today = datetime.date.today()
 today_date = str(today.strftime('%m/%d/%Y'))
@@ -49,5 +50,5 @@ process1_initiation_data = {
     'Check list box1': 'CHLB - one',
     'Check list box2': 'CHLB - two\nCHLB - three\nCHLB - five',
     'Time1': '16:23',
-    'Time2': '18:17'
+    # 'Time2': CrossDataVariables.CURRENT_TIME
 }
