@@ -46,6 +46,7 @@ process1_initiation_data = {
     'Combo box3': 'Three',
     'Combo box4': 'One',
     'Combo box5': 'Four',
+    'Combo box7': 'Nine',
     'Radio group-Combo box5': '4',
     'Check list box1': 'CHLB - one',
     'Check list box2': 'CHLB - two\nCHLB - three\nCHLB - five',

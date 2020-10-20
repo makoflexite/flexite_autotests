@@ -61,9 +61,9 @@ class WebInitiatePage(BasePage):
                     time.sleep(1)
                     combobox7_search = len(iframe1.find_by_css(Process1InitiatePageLocators.COMBOBOX7_SEARCH))
                     assert combobox7_search == 3, f'Incorrect search result: it should be 3, but it is {combobox7_search}'
-                    iframe1.find_by_css('#MainForm').click()
+                    iframe1.find_by_css("[value='64205']").click()
+                    # iframe1.find_by_css('#MainForm').click()
                     assert iframe1.is_element_present_by_css("#__16193", wait_time=5), "#__16193 is not found!"
-
                     with iframe1.get_iframe('frame__16193') as iframe2:
                         iframe2.find_by_css(Process1InitiatePageLocators.CHECKLISTBOX1_1).click()
 
