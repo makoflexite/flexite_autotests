@@ -1,5 +1,16 @@
 import datetime
 
+from .base_page import BasePage
+from .cross_data import *
+
+# class CrossData(BasePage):
+#     def current_time(self):
+#         if self.is_element_present_by_text('Process 1 - Initiate', wait_time=5):
+#             assert self.is_element_present_by_css("#iframe_content_id_ti1", wait_time=5), "iframe0 is not found!"
+#             current_time_data = datetime.datetime.now().strftime("%H:%M")
+#             print(current_time_data)
+#             return current_time_data
+
 today = datetime.date.today()
 today_date = str(today.strftime('%m/%d/%Y'))
 
@@ -49,5 +60,7 @@ process1_initiation_data = {
     'Check list box1': 'CHLB - one',
     'Check list box2': 'CHLB - two\nCHLB - three\nCHLB - five',
     'Time1': '16:23',
-    # 'Time2': CrossDataVariables.CURRENT_TIME
+    # 'Time2': CrossData.current_time_data
+    'Tree1': '3',
+    'Tree2': '1, 11\n3',
 }

@@ -4,6 +4,7 @@ import allure
 from .base_page import BasePage
 from .locators import FullWebPageLocators
 from .locators import WebLoginPageLocators
+from .locators import Process1InitiatePageLocators
 from allure_commons.types import AttachmentType
 
 class FullWebPage(BasePage):
@@ -15,12 +16,11 @@ class FullWebPage(BasePage):
     @allure.step
     def process_1_initiate_finish(self):
         if self.browser.is_element_present_by_text('Process 1 - Initiate', wait_time=5):
-            with self.browser.get_iframe(1) as iframe:
-                assert iframe.is_element_present_by_css("#ButtonsFrame", wait_time=5), "ButtonsFrame is not found!"
-                with iframe.get_iframe('ButtonsFrame') as iframe1:
-                    next_btn = iframe1.find_by_css(FullWebPageLocators.PROCESS_1_INITIATE_NEXT_BUTTON).click()
+            with (self.one_iframe('#iframe_content_id_ti0', 'iframe0', 1)) as iframe:
+                with (self.one_iframe('#ButtonsFrame', 'ButtonsFrame', 'ButtonsFrame')) as iframe:
+                    next_btn = iframe.find_by_css(Process1InitiatePageLocators.PROCESS_1_INITIATE_NEXT_BUTTON).click()
                     if self.browser.is_element_present_by_text('E-mail receivers', wait_time=5):
-                        next_btn = iframe1.find_by_css(FullWebPageLocators.PROCESS_1_INITIATE_NEXT_BUTTON).click()
+                        next_btn = iframe.find_by_css(Process1InitiatePageLocators.PROCESS_1_INITIATE_NEXT_BUTTON).click()
 
 
     @allure.step
@@ -54,35 +54,26 @@ class SettingsTab(BasePage):
     @allure.step
     def should_be_swedish_language_in_settings(self):
         if self.browser.is_element_present_by_text('Inställningar', wait_time=5):
-            assert self.browser.is_element_present_by_css("#iframe_content_id_ti0", wait_time=5), "iframe0 is not found!"
-            with self.browser.get_iframe(1) as iframe:
-                assert iframe.is_element_present_by_css("#mainFrame", wait_time=5), "iframe1 is not found!"
-                with iframe.get_iframe('mainFrame') as iframe1:
-                    lang_combo = iframe1.find_by_css(FullWebPageLocators.SETTINGS_LANG_COMBOBOX)
+           with (self.one_iframe('#iframe_content_id_ti0', 'iframe0', 1)) as iframe:
+                with (self.one_iframe('#mainFrame', 'iframe1', 'mainFrame')) as iframe:
+                    lang_combo = iframe.find_by_css(FullWebPageLocators.SETTINGS_LANG_COMBOBOX)
                     lang_combo.click()
-                    assert iframe1.find_by_css("[selected]")[1].text == 'Svenska', "Not Swedish language is choosen on language combo box"
+                    assert iframe.find_by_css("[selected]")[1].text == 'Svenska', "Not Swedish language is choosen on language combo box"
 
     @allure.step
     def should_be_english_language_in_settings(self):
         if self.browser.is_element_present_by_text('Settings', wait_time=5):
-            assert self.browser.is_element_present_by_css("#iframe_content_id_ti0", wait_time=5), "iframe0 is not found!"
-            with self.browser.get_iframe(1) as iframe:
-                assert iframe.is_element_present_by_css("#mainFrame", wait_time=5), "iframe1 is not found!"
-                with iframe.get_iframe('mainFrame') as iframe1:
-                    lang_combo = iframe1.find_by_css(FullWebPageLocators.SETTINGS_LANG_COMBOBOX)
+             with (self.one_iframe('#iframe_content_id_ti0', 'iframe0', 1)) as iframe:
+                with (self.one_iframe('#mainFrame', 'iframe1', 'mainFrame')) as iframe:
+                    lang_combo = iframe.find_by_css(FullWebPageLocators.SETTINGS_LANG_COMBOBOX)
                     lang_combo.click()
-                    assert iframe1.find_by_css("[selected]")[1].text == 'English', "Not English language is choosen on language combo box"
-        # else:
-        #     print('Settings text is not found')
+                    assert iframe.find_by_css("[selected]")[1].text == 'English', "Not English language is choosen on language combo box"
+
 
     @allure.step
     def should_be_autotests_department_1(self):
         if self.browser.is_element_present_by_text('Inställningar', wait_time=5):
-            assert self.browser.is_element_present_by_css("#iframe_content_id_ti0", wait_time=5), "iframe0 is not found!"
-            with self.browser.get_iframe(1) as iframe:
-                assert iframe.is_element_present_by_css("#mainFrame", wait_time=5), "iframe1 is not found!"
-                with iframe.get_iframe('mainFrame') as iframe1:
-                    dep_field = iframe1.find_by_css(FullWebPageLocators.SETTINGS_DEPARTMENT_FIELD).value
+            with (self.one_iframe('#iframe_content_id_ti0', 'iframe0', 1)) as iframe:
+                with (self.one_iframe('#mainFrame', 'iframe1', 'mainFrame')) as iframe:
+                    dep_field = iframe.find_by_css(FullWebPageLocators.SETTINGS_DEPARTMENT_FIELD).value
                     assert dep_field == WebLoginPageLocators.DUPLICATE_USER_DEP_1_LABEL, f"Not '{WebLoginPageLocators.DUPLICATE_USER_DEP_1_LABEL}' is in Department field"
-
-

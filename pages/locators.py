@@ -70,6 +70,13 @@ class Process1InitiatePageLocators():
     TIME1 = '[name="_16195"]'
     TIME1_1 = '#hh16195'
     TIME1_2 = '#mm16195'
+    TREE1_PLUS = '#iconA35'
+    TREE1_1_1 = '#checkboxA38'
+    TREE1_3 = '#checkboxA37'
+    TREE2_PLUS = '#iconA39'
+    TREE2_1_1 = '#checkboxA40'
+    TREE2_3 = '#checkboxA42'
+
 
 
 

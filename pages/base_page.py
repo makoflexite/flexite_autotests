@@ -7,7 +7,7 @@
 # from selenium.webdriver.support import expected_conditions as EC
 # import math
 # from .locators import BasePageLocators
-# from .locators import MainPageLocators
+# from .locators import *
 
 from splinter import Browser
 import pytest_splinter
@@ -16,9 +16,15 @@ import splinter
 class BasePage():
     def __init__(self, browser):
         self.browser = browser
-        self.selenium_driver = self.browser.driver
+        # self.selenium_driver = self.browser.driver
         # self.url = url
         # self.browser.implicitly_wait(timeout)
+
+    def one_iframe(self, iframe1, iframe1_string,  one_get_iframe):
+        assert self.browser.is_element_present_by_css(iframe1, wait_time=5), iframe1_string + " is not found!"
+        iframee = self.browser.get_iframe(one_get_iframe)
+        return iframee
+
 
     # def is_element_present(self, how, what):
     #     try:
