@@ -53,7 +53,7 @@ process1_initiation_data = {
     'Combo box1': 'One',
     'Combo box2': 'Two',
     'Combo box3': 'Three',
-    'Combo box4': 'One',
+    'Combo box4': 'Two',
     'Combo box5': 'Four',
     'Combo box7': 'Nine',
     'Radio group-Combo box5': '4',
@@ -63,4 +63,11 @@ process1_initiation_data = {
     # 'Time2': CrossData.current_time_data
     'Tree1': '3',
     'Tree2': '1, 11\n3',
+    'Radio group1': 'RG - one',
+    'Radio group2': 'RG - two',
+    'Radio group3': 'RG - three',
+    'Radio group4': 'RG - two',
+    'Radio group5': 'RG - four',
+    'Radio group-Radio group5': '4'
+
 }

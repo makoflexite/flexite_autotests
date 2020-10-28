@@ -38,6 +38,8 @@ class Process1InitiatePageLocators():
     PROCESS_1_INITIATE_NEXT_BUTTON = '#next-button'
     PROCESS_1_INITIATE_FINISH_BUTTON = '#next-button[value="Finish"]'
     PREVIEW_TAB = '#FormTable #_2'
+
+class Process1InitiatePageLocatorsStartForm1():
     LABEL1 = '#CLR_DIV_16132 > div:nth-child(2) > a'
     LABEL2 = '#CLR_DIV_16133 > div:nth-child(2) > span'
     STRING1 = '[name="_16134"]'
@@ -57,12 +59,18 @@ class Process1InitiatePageLocators():
     CHECKBOX3 = '.ComponentInputField.l16180'
     CHECKBOX4 = '.ComponentInputField.l16181'
     COMBOBOX1 = '[name="_16183"]'
+    COMBOBOX1_VALUE1 = '[value="64137"]'
     COMBOBOX2 = '[name="_16184"]'
     COMBOBOX3 = '[name="_16185"]'
+    COMBOBOX3_VALUE3 = '[value="64159"]'
     COMBOBOX4 = '[name="_16186"]'
+    COMBOBOX4_VALUE2 = '[value="64168"]'
+    RADIOGROUP_COMBOBOX5_VALUE4 = '#rgv_64185'
+    RADIOGROUP_COMBOBOX5_VALUE5 = '#rgv_64186'
     COMBOBOX7 = '[name="_16192"]'
     COMBOBOX7_INPUT = '#ddi_16192'
     COMBOBOX7_SEARCH = '#dds_16192>option'
+    COMBOBOX7_VALUE_NINE = '[value="64205"]'
     CHECKLISTBOX1_1 = '#cb64207'
     CHECKLISTBOX2_2 = '#cb64213'
     CHECKLISTBOX2_3 = '#cb64214'
@@ -76,6 +84,11 @@ class Process1InitiatePageLocators():
     TREE2_PLUS = '#iconA39'
     TREE2_1_1 = '#checkboxA40'
     TREE2_3 = '#checkboxA42'
+    RADIOGROUP1_1 = '#rgv_64999'
+    RADIOGROUP3_3 = '#rgv_65011'
+    RADIOGROUP4_2 = '#rgv_65015'
+    RADIOGROUP_RADIOGROUP5_VALUE4 = '#rgv_64185'
+    RADIOGROUP_RADIOGROUP5_VALUE5 = '#rgv_64185'
 
 
 

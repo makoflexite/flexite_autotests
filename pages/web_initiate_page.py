@@ -6,6 +6,7 @@ from selenium.webdriver.support.events import EventFiringWebDriver
 from .base_page import BasePage
 from .locators import FullWebPageLocators
 from .locators import Process1InitiatePageLocators
+from .locators import Process1InitiatePageLocatorsStartForm1
 from .python_sql_connect import *
 from .common_data import *
 
@@ -31,62 +32,80 @@ class WebInitiatePage(BasePage):
         if self.browser.is_element_present_by_text('Process 1 - Initiate', wait_time=5):
             with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
                 with (self.one_iframe('#mainFrame', 'mainFrame', 'mainFrame')) as iframe:
+                    """Strings ! need to work more !"""
                     # string1 = iframe1.find_by_css(Process1InitiatePageLocators.STRING1)
                     # assert string1.value == 'user00', 'macro %%%USER_NAME works incorrectly'
-
-                    string2 = iframe.find_by_css(Process1InitiatePageLocators.STRING2).fill('test value string2')
-                    memo1 = iframe.find_by_css(Process1InitiatePageLocators.MEMO2).fill('test value memo2')
-                    number2 = iframe.find_by_css(Process1InitiatePageLocators.NUMBER2).fill('-3')
-                    number3 = iframe.find_by_css(Process1InitiatePageLocators.NUMBER3).fill('10')
-                    number4 = iframe.find_by_css(Process1InitiatePageLocators.NUMBER4).fill('1.25')
-                    date8 = iframe.find_by_css(Process1InitiatePageLocators.DATE8).fill('01/01/2021')
-                    iframe.find_by_css(Process1InitiatePageLocators.DATE9_BUTTON).click()
-                    iframe.find_by_css(Process1InitiatePageLocators.DATE9_CALENDAR_TODAY).click()
-                    iframe.find_by_css(Process1InitiatePageLocators.CHECKBOX3).click()
-                    iframe.find_by_css(Process1InitiatePageLocators.CHECKBOX4).click()
-                    combobox1 = iframe.find_by_css(Process1InitiatePageLocators.COMBOBOX1).click()
-                    iframe.find_by_css("[value='64137']").click()
-                    combobox3 = iframe.find_by_css(Process1InitiatePageLocators.COMBOBOX3).click()
-                    iframe.find_by_css("[value='64159']").click()
-                    # radiogroup_combobox5 = iframe1.find_by_css(Process1InitiatePageLocators.RADIOGROUP_COMBOBOX5)
-                    iframe.find_by_css("#rgv_64186").click()
-                    iframe.find_by_css("#rgv_64185").click()
-                    combobox7 = iframe.find_by_css(Process1InitiatePageLocators.COMBOBOX7).click()
-                    iframe.find_by_css(Process1InitiatePageLocators.COMBOBOX7_INPUT).fill('ne')
+                    string2 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.STRING2).fill('test value string2')
+                    """Memo"""
+                    memo1 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.MEMO2).fill('test value memo2')
+                    """Numbers"""
+                    number2 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.NUMBER2).fill('-3')
+                    number3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.NUMBER3).fill('10')
+                    number4 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.NUMBER4).fill('1.25')
+                    """Dates"""
+                    date8 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.DATE8).fill('01/01/2021')
+                    iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.DATE9_BUTTON).click()
+                    iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.DATE9_CALENDAR_TODAY).click()
+                    """Check boxes"""
+                    iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.CHECKBOX3).click()
+                    iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.CHECKBOX4).click()
+                    """Combo boxes"""
+                    combobox1 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.COMBOBOX1).click()
+                    combobox1_value1 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.COMBOBOX1_VALUE1).click()
+                    combobox3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.COMBOBOX3).click()
+                    combobox3_value3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.COMBOBOX3_VALUE3).click()
+                    combobox4 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.COMBOBOX4).click()
+                    combobox4_value2 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.COMBOBOX4_VALUE2).click()
+                    radiogroup_combobox5_value5 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP_COMBOBOX5_VALUE5).click()
+                    radiogroup_combobox5_value5 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP_COMBOBOX5_VALUE4).click()
+                    combobox7 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.COMBOBOX7).click()
+                    # search in combobox7
+                    iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.COMBOBOX7_INPUT).fill('ne')
                     time.sleep(1)
-                    combobox7_search = len(iframe.find_by_css(Process1InitiatePageLocators.COMBOBOX7_SEARCH))
+                    combobox7_search = len(iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.COMBOBOX7_SEARCH))
                     assert combobox7_search == 3, f'Incorrect search result: it should be 3, but it is {combobox7_search}'
-                    iframe.find_by_css("[value='64205']").click()
+                    # to select value 'Nine' in combobox7
+                    combobox7_value_Nine = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.COMBOBOX7_VALUE_NINE).click()
                     # iframe1.find_by_css('#MainForm').click()
+                    """Check list boxes"""
                     with (self.one_iframe('#__16193', '#__16193', 'frame__16193')) as iframe:
-                        iframe.find_by_css(Process1InitiatePageLocators.CHECKLISTBOX1_1).click()
+                        checklistbox1_value1 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.CHECKLISTBOX1_1).click()
 
             with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
                 with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
                     with (self.one_iframe('#__16194', '#__16194', 'frame__16194')) as iframe:
-                        iframe.find_by_css(Process1InitiatePageLocators.CHECKLISTBOX2_2).click()
-                        iframe.find_by_css(Process1InitiatePageLocators.CHECKLISTBOX2_3).click()
-                        iframe.find_by_css(Process1InitiatePageLocators.CHECKLISTBOX2_5).click()
+                        checklistbox2_value2 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.CHECKLISTBOX2_2).click()
+                        checklistbox2_value3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.CHECKLISTBOX2_3).click()
+                        checklistbox2_value5 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.CHECKLISTBOX2_5).click()
                     # time.sleep(2)
                     # print(iframe1.find_by_css(Process1InitiatePageLocators.TIME1_1).value)
                     # iframe1.find_by_css(Process1InitiatePageLocators.TIME1_2).fill('23')
+                    """Time"""
             with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
                 with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
-                    iframe.find_by_css(Process1InitiatePageLocators.TIME1_1).fill('16')
-                    iframe.find_by_css(Process1InitiatePageLocators.TIME1_2).fill('23')
+                    iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.TIME1_1).fill('16')
+                    iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.TIME1_2).fill('23')
                     # CrossDataVariables.CURRENT_TIME = datetime.datetime.now().strftime("%H:%M")
                     # print(CrossDataVariables.CURRENT_TIME)
+                    """Tree"""
                     with (self.one_iframe('#frame16925', 'frame16925', 'frame16925')) as iframe:
-                        iframe.find_by_css(Process1InitiatePageLocators.TREE1_PLUS).click()
-                        iframe.find_by_css(Process1InitiatePageLocators.TREE1_1_1).click()
-                        iframe.find_by_css(Process1InitiatePageLocators.TREE1_3).click()
+                        iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.TREE1_PLUS).click()
+                        iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.TREE1_1_1).click()
+                        iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.TREE1_3).click()
             with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
                 with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
                     with (self.one_iframe('#frame16926', 'frame16926', 'frame16926')) as iframe:
-                        iframe.find_by_css(Process1InitiatePageLocators.TREE2_PLUS).click()
-                        iframe.find_by_css(Process1InitiatePageLocators.TREE2_1_1).click()
-                        iframe.find_by_css(Process1InitiatePageLocators.TREE2_3).click()
-
+                        iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.TREE2_PLUS).click()
+                        iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.TREE2_1_1).click()
+                        iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.TREE2_3).click()
+            with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
+                with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
+                    """Radio groups"""
+                    radiogroup1_value1 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP1_1).click()
+                    radiogroup3_value3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP3_3).click()
+                    radiogroup4_value2 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP4_2).click()
+                    radiogroup_radiogroup5_value5 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP_RADIOGROUP5_VALUE5).click()
+                    radiogroup_radiogroup5_value4 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP_RADIOGROUP5_VALUE4).click()
 
 
     @allure.step
@@ -127,7 +146,7 @@ class WebInitiatePage(BasePage):
                         caption= captions[i].text
                         value = values[i-2].text
                         assert caption in process1_initiation_data, 'Key "{}" is not found in dictionary'.format(caption)
-                        assert process1_initiation_data[caption] == value, 'Value "{}" in Preview table is not same as in dictionary "{}"'.format(value, process1_initiation_data[caption])
+                        assert process1_initiation_data[caption] == value, 'Component "{}": Value "{}" in Preview table is not same as in dictionary "{}"'.format(caption, value, process1_initiation_data[caption])
 
 
     @allure.step
