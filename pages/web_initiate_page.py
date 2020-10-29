@@ -106,6 +106,13 @@ class WebInitiatePage(BasePage):
                     radiogroup4_value2 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP4_2).click()
                     radiogroup_radiogroup5_value5 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP_RADIOGROUP5_VALUE5).click()
                     radiogroup_radiogroup5_value4 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP_RADIOGROUP5_VALUE4).click()
+                    """Radio list box"""
+                    with (self.one_iframe('#__16935', '#__16935', 'frame__16935')) as iframe:
+                        radiolistbox1_value1 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOLISTBOX1_1).click()
+            with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
+                with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
+                    with (self.one_iframe('#__16937', '#__16937', 'frame__16937')) as iframe:
+                        radiolistbox1_value1 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOLISTBOX3_3).click()
 
 
     @allure.step

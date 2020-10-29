@@ -1,7 +1,6 @@
 import datetime
 
 from .base_page import BasePage
-from .cross_data import *
 
 # class CrossData(BasePage):
 #     def current_time(self):
@@ -68,6 +67,9 @@ process1_initiation_data = {
     'Radio group3': 'RG - three',
     'Radio group4': 'RG - two',
     'Radio group5': 'RG - four',
-    'Radio group-Radio group5': '4'
+    'Radio group-Radio group5': '4',
+    'Radio list box1': 'RL - one',
+    'Radio list box2': 'RL - two',
+    'Radio list box3': 'RL - three',
 
 }

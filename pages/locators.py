@@ -89,6 +89,9 @@ class Process1InitiatePageLocatorsStartForm1():
     RADIOGROUP4_2 = '#rgv_65015'
     RADIOGROUP_RADIOGROUP5_VALUE4 = '#rgv_64185'
     RADIOGROUP_RADIOGROUP5_VALUE5 = '#rgv_64185'
+    RADIOLISTBOX1_1 = '#rb65039'
+    RADIOLISTBOX3_3 = '#rb65047'
+
 
 
 

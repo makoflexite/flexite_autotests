@@ -6,7 +6,6 @@ from .pages.web_login_page import WebLoginPage
 from .pages.full_web_page import FullWebPage
 from .pages.web_initiate_page import WebInitiatePage
 from .pages.locators import *
-from .pages.cross_data import *
 
 
 @allure.feature('Initiation tests')
