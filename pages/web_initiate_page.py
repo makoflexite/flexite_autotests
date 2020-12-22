@@ -132,7 +132,14 @@ class WebInitiatePage(BasePage):
                 with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
                     with (self.one_iframe('#__16937', '#__16937', 'frame__16937')) as iframe:
                         radiolistbox3_value3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOLISTBOX3_3).click()
-        else: print('StartForm2 not found!')
+            with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
+                with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
+                    with (self.one_iframe('#__16938', '#__16938', 'frame__16938')) as iframe:
+                        radiolistbox4_value2 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOLISTBOX4_2).click()
+            with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
+                with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
+                    radiogroup_radiolist5_value3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP_RADIOLIST5_VALUE3).click()
+                    radiogroup_radiolist5_value2 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP_RADIOLIST5_VALUE2).click()
 
     @allure.step
     def process_1_delete_all_drafts_templates(self):
