@@ -98,6 +98,25 @@ class WebInitiatePage(BasePage):
                         iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.TREE2_PLUS).click()
                         iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.TREE2_1_1).click()
                         iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.TREE2_3).click()
+            # with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
+            #     with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
+            #         """Radio groups"""
+            #         radiogroup1_value1 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP1_1).click()
+            #         radiogroup3_value3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP3_3).click()
+            #         radiogroup4_value2 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP4_2).click()
+            #         radiogroup_radiogroup5_value5 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP_RADIOGROUP5_VALUE5).click()
+            #         radiogroup_radiogroup5_value4 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP_RADIOGROUP5_VALUE4).click()
+            #         """Radio list box"""
+            #         with (self.one_iframe('#__16935', '#__16935', 'frame__16935')) as iframe:
+            #             radiolistbox1_value1 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOLISTBOX1_1).click()
+            # with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
+            #     with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
+            #         with (self.one_iframe('#__16937', '#__16937', 'frame__16937')) as iframe:
+            #             radiolistbox1_value1 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOLISTBOX3_3).click()
+
+    @allure.step
+    def process_1_fill_form_2(self):
+        if self.browser.is_element_present_by_text('Process 1 - Initiate', wait_time=5):
             with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
                 with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
                     """Radio groups"""
@@ -112,8 +131,8 @@ class WebInitiatePage(BasePage):
             with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
                 with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
                     with (self.one_iframe('#__16937', '#__16937', 'frame__16937')) as iframe:
-                        radiolistbox1_value1 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOLISTBOX3_3).click()
-
+                        radiolistbox3_value3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOLISTBOX3_3).click()
+        else: print('StartForm2 not found!')
 
     @allure.step
     def process_1_delete_all_drafts_templates(self):

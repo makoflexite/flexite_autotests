@@ -30,7 +30,8 @@ def test_initiation_ordinary_user_Process_1_from_WEB(browser, screenshot_on_fail
     #     print(CURRENT_TIME)
     page2.process_1_fill_form_1()
     page2.process_1_initiate_next_click()
-
+    page2.process_1_fill_form_2()
+    page2.process_1_initiate_next_click()
     page2.process_1_open_Preview_tab()
     page2.should_be_correct_data_process_1_Preview()
 
