@@ -11,7 +11,7 @@ from .pages.locators import *
 @allure.feature('Initiation tests')
 @pytest.mark.testdebug
 def test_initiation_ordinary_user_Process_1_from_WEB(browser, screenshot_on_failure):
-
+    browser.driver.maximize_window()
     page = WebLoginPage(browser)
     page.input_login_password(WebLoginPageLocators.ORDINARY_USER_NAME, WebLoginPageLocators.ORDINARY_USER_PASS)
     page.choose_english_lang()
