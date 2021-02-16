@@ -74,4 +74,9 @@ process1_initiation_data = {
     'Radio list box4': 'RL - two',
     'Radio list box5': 'RL - two',
     'Radio group-Radio list box5': '2',
+    'User2': 'User00Name User00Surname',
+    'User3': 'user01Name user01Surname',
+    'User4': 'user01Name user01Surname',
+    'User5': 'user01Name user01Surname',
+
 }

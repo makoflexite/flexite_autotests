@@ -2,11 +2,13 @@ import allure
 import time
 import datetime
 from selenium.webdriver.support.events import EventFiringWebDriver
+from selenium.webdriver.common.keys import Keys
 
-from .base_page import BasePage
-from .locators import FullWebPageLocators
-from .locators import Process1InitiatePageLocators
-from .locators import Process1InitiatePageLocatorsStartForm1
+# from .base_page import BasePage
+# from .locators import FullWebPageLocators
+# from .locators import Process1InitiatePageLocators
+# from .locators import Process1InitiatePageLocatorsStartForm1
+from .locators import *
 from .python_sql_connect import *
 from .common_data import *
 
@@ -120,26 +122,42 @@ class WebInitiatePage(BasePage):
             with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
                 with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
                     """Radio groups"""
-                    radiogroup1_value1 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP1_1).click()
-                    radiogroup3_value3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP3_3).click()
-                    radiogroup4_value2 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP4_2).click()
-                    radiogroup_radiogroup5_value5 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP_RADIOGROUP5_VALUE5).click()
-                    radiogroup_radiogroup5_value4 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP_RADIOGROUP5_VALUE4).click()
+                    radiogroup1_value1 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.RADIOGROUP1_1).click()
+                    radiogroup3_value3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.RADIOGROUP3_3).click()
+                    radiogroup4_value2 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.RADIOGROUP4_2).click()
+                    radiogroup_radiogroup5_value5 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.RADIOGROUP_RADIOGROUP5_VALUE5).click()
+                    radiogroup_radiogroup5_value4 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.RADIOGROUP_RADIOGROUP5_VALUE4).click()
                     """Radio list box"""
                     with (self.one_iframe('#__16935', '#__16935', 'frame__16935')) as iframe:
-                        radiolistbox1_value1 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOLISTBOX1_1).click()
+                        radiolistbox1_value1 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.RADIOLISTBOX1_1).click()
             with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
                 with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
                     with (self.one_iframe('#__16937', '#__16937', 'frame__16937')) as iframe:
-                        radiolistbox3_value3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOLISTBOX3_3).click()
+                        radiolistbox3_value3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.RADIOLISTBOX3_3).click()
             with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
                 with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
                     with (self.one_iframe('#__16938', '#__16938', 'frame__16938')) as iframe:
-                        radiolistbox4_value2 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOLISTBOX4_2).click()
+                        radiolistbox4_value2 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.RADIOLISTBOX4_2).click()
             with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
                 with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
-                    radiogroup_radiolist5_value3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP_RADIOLIST5_VALUE3).click()
-                    radiogroup_radiolist5_value2 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm1.RADIOGROUP_RADIOLIST5_VALUE2).click()
+                    radiogroup_radiolist5_value3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.RADIOGROUP_RADIOLIST5_VALUE3).click()
+                    radiogroup_radiolist5_value2 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.RADIOGROUP_RADIOLIST5_VALUE2).click()
+                    """User component"""
+                    user1 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER1).click()
+                    time.sleep(1)
+            with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
+                # user_dialog = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER1_DIALOG)
+                user1_dialog_cross_button = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER_POPUP_CROSS_BUTTON).click()
+            # with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
+            #     with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
+            #         user3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER3).click()
+            #         # user3.type(Keys.BACKSPACE)
+            #         time.sleep(1)
+            # with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
+            #     user3_dialog_cross_button = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER_POPUP_CROSS_BUTTON).click()
+            #     time.sleep(3)
+
+
 
     @allure.step
     def process_1_delete_all_drafts_templates(self):

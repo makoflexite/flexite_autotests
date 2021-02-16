@@ -84,6 +84,8 @@ class Process1InitiatePageLocatorsStartForm1():
     TREE2_PLUS = '#iconA39'
     TREE2_1_1 = '#checkboxA40'
     TREE2_3 = '#checkboxA42'
+
+class Process1InitiatePageLocatorsStartForm2():
     RADIOGROUP1_1 = '#rgv_64999'
     RADIOGROUP3_3 = '#rgv_65011'
     RADIOGROUP4_2 = '#rgv_65015'
@@ -94,9 +96,12 @@ class Process1InitiatePageLocatorsStartForm1():
     RADIOLISTBOX4_2 = '#rb65049'
     RADIOGROUP_RADIOLIST5_VALUE3 = '#rgv_65192'
     RADIOGROUP_RADIOLIST5_VALUE2 = '#rgv_65191'
-
-
-
+    USER1 = '#A__17000'
+    # USER1_DIALOG = '.ui-dialog'
+    # USER1_POPUP_CANCEL_BUTTON = '#cancel'
+    USER_POPUP_CROSS_BUTTON = '.ui-dialog-titlebar-close'
+    USER3 = '#A__17002'
+    USER3_1 = '[name="_17002"]'
 
 
 
