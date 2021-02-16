@@ -13,7 +13,7 @@ from .pages.full_web_page import SettingsTab
 from .pages.locators import *
 
 @allure.feature('Login page tests')
-# @pytest.mark.testdebug
+@pytest.mark.testlogin
 def test_ordinary_user_can_login_to_web_with_swedish_def_lang(browser, screenshot_on_failure):
     page = WebLoginPage(browser)
     page.input_login_password(WebLoginPageLocators.ORDINARY_USER_NAME, WebLoginPageLocators.ORDINARY_USER_PASS)
@@ -30,6 +30,7 @@ def test_ordinary_user_can_login_to_web_with_swedish_def_lang(browser, screensho
 
 # @pytest.mark.testdebug
 @allure.feature('Login page tests')
+@pytest.mark.testlogin
 def test_ordinary_user_can_login_to_web_with_eng_lang(browser, screenshot_on_failure):
     page = WebLoginPage(browser)
     page.input_login_password(WebLoginPageLocators.ORDINARY_USER_NAME, WebLoginPageLocators.ORDINARY_USER_PASS)
@@ -47,6 +48,7 @@ def test_ordinary_user_can_login_to_web_with_eng_lang(browser, screenshot_on_fai
 
 # @pytest.mark.testdebug
 @allure.feature('Login page tests')
+@pytest.mark.testlogin
 def test_duplicate_not_absent_user_can_login_to_web(browser):
     page = WebLoginPage(browser)
     page.input_login_password(WebLoginPageLocators.DUPLICATE_USER_NAME, WebLoginPageLocators.DUPLICATE_USER_PASS)
