@@ -100,8 +100,8 @@ class Process1InitiatePageLocatorsStartForm2():
     # USER1_DIALOG = '.ui-dialog'
     # USER1_POPUP_CANCEL_BUTTON = '#cancel'
     USER_POPUP_CROSS_BUTTON = '.ui-dialog-titlebar-close'
-    USER3 = '#A__17002'
-    USER3_1 = '[name="_17002"]'
+    # USER3 = '#A__17002'
+    USER3_1 = '[name="__17002"]'
 
 
 

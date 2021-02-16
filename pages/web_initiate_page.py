@@ -148,11 +148,11 @@ class WebInitiatePage(BasePage):
             with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
                 # user_dialog = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER1_DIALOG)
                 user1_dialog_cross_button = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER_POPUP_CROSS_BUTTON).click()
-            # with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
-            #     with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
-            #         user3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER3).click()
-            #         # user3.type(Keys.BACKSPACE)
-            #         time.sleep(1)
+            with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
+                with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
+                    user3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER3_1).type(Keys.BACKSPACE)
+                    # time.sleep(3)
+
             # with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
             #     user3_dialog_cross_button = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER_POPUP_CROSS_BUTTON).click()
             #     time.sleep(3)

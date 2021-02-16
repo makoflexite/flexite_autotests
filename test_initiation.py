@@ -9,6 +9,7 @@ from .pages.locators import *
 
 
 @allure.feature('Initiation tests')
+@pytest.mark.testinitiation
 @pytest.mark.testdebug
 def test_initiation_ordinary_user_Process_1_from_WEB(browser, screenshot_on_failure):
     # browser.driver.maximize_window()
