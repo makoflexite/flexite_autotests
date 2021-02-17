@@ -20,9 +20,9 @@ class BasePage():
         # self.url = url
         # self.browser.implicitly_wait(timeout)
 
-    def one_iframe(self, iframe1, iframe1_string,  one_get_iframe):
+    def one_iframe(self, iframe1, iframe1_string,  one_get_iframe_name_or_index):
         assert self.browser.is_element_present_by_css(iframe1, wait_time=5), iframe1_string + " is not found!"
-        iframee = self.browser.get_iframe(one_get_iframe)
+        iframee = self.browser.get_iframe(one_get_iframe_name_or_index)
         return iframee
 
 

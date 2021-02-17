@@ -150,12 +150,20 @@ class WebInitiatePage(BasePage):
                 user1_dialog_cross_button = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER_POPUP_CROSS_BUTTON).click()
             with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
                 with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
-                    user3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER3_1).type(Keys.BACKSPACE)
+                    user3 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER3_INPUT).type(Keys.BACKSPACE)
                     # time.sleep(3)
+                    user4 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER4).click()
+                    time.sleep(1)
+            # with (self.one_iframe('#PersonFrame', 'PersonFrame', 1)) as iframe:
+            #     user4_user00 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER4_USER00).click()
 
-            # with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
-            #     user3_dialog_cross_button = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER_POPUP_CROSS_BUTTON).click()
-            #     time.sleep(3)
+            with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)):
+                assert self.browser.find_by_id('frameId_component_authlist_inc'), "frameId_component_authlist_inc NOT FOUND"
+                with (self.one_iframe('#frameId_component_authlist_inc', 'frameId_component_authlist_inc', self.browser.find_by_id('frameId_component_authlist_inc')[0])) as iframe:
+                # with (self.one_iframe('#PersonFrame', 'PersonFrame', 'PersonFrame')) as iframe:
+                #     user4_user00 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER4_USER00).click()
+                    with (self.one_iframe('#ButtonFrame', 'ButtonFrame', 'ButtonFrame')) as iframe:
+                        iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER_POPUP_SELECT_USER_BUTTON).click()
 
 
 
