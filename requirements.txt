@@ -16,7 +16,7 @@ namedlist==1.7
 packaging==20.3
 pluggy==0.13.1
 protobuf==3.13.0
-py==1.8.1
+py==1.10.0
 pycparser==2.20
 pyodbc==4.0.30
 pyOpenSSL==19.1.0
