@@ -5,7 +5,7 @@
 #     BASKET_VIEW = (By.CSS_SELECTOR, ".btn-group>a")
 
 class WebLoginPageLocators():
-    LOGIN_PAGE_LINK = "http://172.28.10.163:8081/9000TE/jsp/index_ms.jsp"
+    LOGIN_PAGE_LINK = "http://172.28.10.163:8085/9000TE/jsp/index_ms.jsp"
     USERNAME = "#login_form #name1"
     PASSWORD = "#login_form #password1"
     LANG_LABEL = ".login_lable label"
