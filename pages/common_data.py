@@ -36,6 +36,7 @@ process1_initiation_data = {
     'Number3': '10',
     'Number4': '1.25',
     'Number5': '-10.50',
+    'Number6': '0',
     'Date1': '10/01/2020',
     'Date2': yesterday_date,
     'Date3': today_date,
