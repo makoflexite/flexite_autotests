@@ -32,7 +32,7 @@ class WebLoginPage(BasePage):
 
     @allure.step
     def should_be_swedish_language_on_lang_label(self):
-        assert self.browser.find_by_css(WebLoginPageLocators.LANG_LABEL)[2].text=="Språk", "Strings on login form are not Swedish"
+        assert self.browser.find_by_css(WebLoginPageLocators.LANG_LABEL)[2].text=="Välj språk", "Strings on login form are not Swedish"
 
     @allure.step
     def should_be_swedish_language_in_lang_combobox(self):

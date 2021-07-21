@@ -2,7 +2,7 @@ import pypyodbc as pyodbc
 from datetime import datetime
 
 db_host = r'srv-pine2016\fx2012'
-db_name = 'standard9502'
+db_name = 'standard2103'
 db_user  = 'sa'
 db_password  = 'Flexite123'
 
