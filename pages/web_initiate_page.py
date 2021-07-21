@@ -164,6 +164,36 @@ class WebInitiatePage(BasePage):
                 #     user4_user00 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER4_USER00).click()
                     with (self.one_iframe('#ButtonFrame', 'ButtonFrame', 'ButtonFrame')) as iframe:
                         iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.USER_POPUP_SELECT_USER_BUTTON).click()
+            #time.sleep(5)
+            """Org unit components"""
+            with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
+                with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
+                    org_unit1 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.ORG_UNIT1)
+                    assert org_unit1.value == '', "Org unit1 is not empty, it is {} instead".format(org_unit1.value)
+                    org_unit1.click()
+            with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)):
+                assert self.browser.find_by_id('frameId_select_department_id'), "frameId_select_department_id NOT FOUND"
+                with (self.one_iframe('#frameId_select_department_id', 'frameId_select_department_id', self.browser.find_by_id('frameId_select_department_id')[0])) as iframe:
+                    iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.ORG_UNIT1_VALUE_AUTOTEST_DEP_2).double_click()
+            time.sleep(1)
+
+            with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
+                with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
+                    org_unit2 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.ORG_UNIT2)
+                    assert org_unit2.value == 'Autotests department 1', "Org unit2 should be 'Autotests department 1', but '{}' instead".format(org_unit2.value)
+                    org_unit2.type(Keys.BACKSPACE)
+
+                    org_unit4 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.ORG_UNIT4)
+                    assert org_unit4.value == 'Administration', "Org unit4 should be 'Administration', but '{}' instead".format(org_unit4.value)
+                    org_unit4.click()
+            with (self.one_iframe('#iframe_content_id_ti2', 'iframe0', 1)):
+                assert self.browser.find_by_id('frameId_select_department_id'), "frameId_select_department_id NOT FOUND"
+                with (self.one_iframe('#frameId_select_department_id', 'frameId_select_department_id', self.browser.find_by_id('frameId_select_department_id')[0])) as iframe:
+                    iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.ORG_UNIT4_VALUE_TEST1).double_click()
+            time.sleep(1)
+
+
+
 
 
 

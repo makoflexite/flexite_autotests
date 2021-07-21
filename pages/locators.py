@@ -105,6 +105,11 @@ class Process1InitiatePageLocatorsStartForm2():
     USER3_INPUT = '[name="__17002"]'
     USER4 = '#A__17003'
     USER4_USER00 = '[id="263"]'
+    ORG_UNIT1 = '[name="__17005"]'
+    ORG_UNIT2 = '[name="__17006"]'
+    ORG_UNIT1_VALUE_AUTOTEST_DEP_2 = '[id="txtD259"]'
+    ORG_UNIT4 = '[name="__17008"]'
+    ORG_UNIT4_VALUE_TEST1 = '[id="txtD261"]'
 
 
 

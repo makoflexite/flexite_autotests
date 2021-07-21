@@ -78,5 +78,10 @@ process1_initiation_data = {
     'User2': 'User00Name User00Surname',
     'User4': 'User00Name User00Surname',
     'User5': 'user01Name user01Surname',
+    'Organizational unit1': 'Autotests department 2',
+    'Organizational unit3': 'Autotests department 1',
+    'Organizational unit4': 'test1',
+    'Organizational unit5': 'Administration',
+    'Organizational unit6': 'Autotests department 1',
 
 }
