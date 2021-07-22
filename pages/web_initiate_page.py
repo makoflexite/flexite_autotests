@@ -183,14 +183,17 @@ class WebInitiatePage(BasePage):
                     assert org_unit2.value == 'Autotests department 1', "Org unit2 should be 'Autotests department 1', but '{}' instead".format(org_unit2.value)
                     org_unit2.type(Keys.BACKSPACE)
 
+            with (self.one_iframe('#iframe_content_id_ti1', 'iframe0', 1)) as iframe:
+                with (self.one_iframe('#mainFrame', '#mainFrame', 'mainFrame')) as iframe:
                     org_unit4 = iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.ORG_UNIT4)
                     assert org_unit4.value == 'Administration', "Org unit4 should be 'Administration', but '{}' instead".format(org_unit4.value)
                     org_unit4.click()
-            with (self.one_iframe('#iframe_content_id_ti2', 'iframe0', 1)):
+                    time.sleep(1)
+            with (self.one_iframe('#iframe_content_id_ti1', '!iframe_content_id_ti1', 1)):
                 assert self.browser.find_by_id('frameId_select_department_id'), "frameId_select_department_id NOT FOUND"
                 with (self.one_iframe('#frameId_select_department_id', 'frameId_select_department_id', self.browser.find_by_id('frameId_select_department_id')[0])) as iframe:
                     iframe.find_by_css(Process1InitiatePageLocatorsStartForm2.ORG_UNIT4_VALUE_TEST1).double_click()
-            time.sleep(1)
+                    time.sleep(1)
 
 
 
